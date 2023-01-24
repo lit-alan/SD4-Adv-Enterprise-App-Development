@@ -4,24 +4,22 @@ The Central Statistics Office (CSO) was established in 1949 as Ireland's nationa
 
 The data they have produced is based on average data over the period 1980 – 2014
 
-I have stored the data in a file called [“days.txt”](misc/days.txt). The content of this file is as follows:
+I have stored the data in a file called [“days.txt”](/misc/days.txt). The content of this file is as follows:
 
-![days.txt](images/img1.JPG)
+![days.txt](/images/img1.JPG)
 
 
 As can be seen from the file, October 1st is the most popular/common day of the year to be born on. December 25 is the 364th most common day to be born on. Unsurprisingly, February 29th is the least common day to be born on. As the file is based on average figures, two or more days may have the same ranking.
 
 
-Write a REST based Web Service where a client will pass a date of birth (the day of the year and the month will be sufficient) into the service. The web service will then parse the file and determine the popularity ranking for the date. The server will then pass this ranking back to the client where it will be displayed to the user. You have a free reign over how the service is called and what type of data it produces.  
+Firstly develop a this application as a **Rest Controller** where a client will pass a date of birth (the day of the year and the month will be sufficient) into the service. The web service will then parse the file and determine the popularity ranking for the date. The server will then pass this ranking back to the client where it will be displayed to the user. You have a free reign over how the service is called and what type of data it produces.  
+
+Secondly, develop this application as a **MVC style controller** (with two views, a form to gather the users input and another to display the result). You will need to use @RequestParam to access the reqest/form parameters values).
 
 The [following code](#file-parsing-code) will assist you in parsing the file:
 
 
-
 How will your service handle invalid dates? For example the following are all invalid (30/02, 31/06, 0/12). The code [here](#date-validation-code)  should help you with date validation.
-
-
-Develop this application firstly as a **Rest Controller** and then as a traditional **MVC style controller** (with two views, a form to gather the users input and another to display the result). 
 
 ## File Parsing Code
 
