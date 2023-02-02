@@ -1,0 +1,43 @@
+<html>
+<head><title>Add a book</title></head>
+
+<p>Add a book</p>
+
+<!-- Display all error messages together in one block -->
+
+<form th:action="@{/book/addBook}" th:object="${aBook}" method="post">
+    <div th:if="${#fields.hasAnyErrors()}">
+        <ul>
+            <li style="color:red" th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+        </ul>
+    </div>
+    <table>
+        <tr>
+            <td><label>Title</label></td>
+            <td><input type="text" th:field="*{title}" name="title"/></td>
+
+        </tr>
+
+        <tr>
+            <td><label>Publisher</label></td>
+            <td><input type="text" th:field="*{publisher}" name="publisher"/></td>
+        </tr>
+        <tr>
+            <td><label>Publication Date</label></td>
+            <td><input type="date" th:field="*{publicationDate}" name="publicationDate"/></td>
+        </tr>
+        <tr>
+            <td><label>Price</label></td>
+            <td> <input type="text" th:field="*{price}" name="price"/></td>
+        </tr>
+        <tr>
+            <td><label>ISBN</label></td>
+            <td><input type="text" th:field="*{isbn}" name="price"/></td>
+       </tr>
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+            <td><input type="reset" value="Clear"></td>
+        </tr>
+    </table>
+</form>
+</html>
