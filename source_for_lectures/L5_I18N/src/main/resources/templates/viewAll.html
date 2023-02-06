@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html th:attr="locale=${en_IE}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title th:text="#{allBooks}"></title>
+</head>
+<body>
+<table style="width:100%">
+    <tr>
+        <th style="text-align:left" th:text="#{bookId}"> </th>
+        <th style="text-align:left" th:text="#{title}"></th>
+        <th style="text-align:left" th:text="#{publisher}"></th>
+        <th style="text-align:left" th:text="#{publication_date}"></th>
+        <th style="text-align:left" th:text="#{price}"></th>
+        <th style="text-align:left" th:text="#{ISBN}"></th>
+    </tr>
+    <tr th:each="b: ${books}">
+
+        <td><span th:text="${b.bookId}"></span></td>
+        <td><span th:text="${b.title}"></span></td>
+        <td><span th:text="${b.publisher}"></span></td>
+        <td><span th:text="${#calendars.format(b.publicationDate,'dd MMMM yyyy')}"></span></td>
+        <td><span th:text="${#numbers.formatCurrency(b.price)}"></span></td>
+        <td><span th:text="${b.isbn}"></span></td>
+        </c:forEach>
+</table>
+
+</body>
+</html>

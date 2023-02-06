@@ -43,6 +43,10 @@ public class BookMVCController {
     @GetMapping("/add")
     public ModelAndView displayAddForm() {
         Book b = new Book();
+
+        b.setPublisher("LIT Publishing");
+        b.setPrice(9.99);
+        b.setTitle("The title goeshere");
         return new ModelAndView("/addBook", "aBook", b);
 
     }
