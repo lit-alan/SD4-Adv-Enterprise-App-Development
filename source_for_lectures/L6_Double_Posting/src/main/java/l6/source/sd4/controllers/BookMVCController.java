@@ -1,11 +1,11 @@
-package l4.source.sd4.controllers;
+package l6.source.sd4.controllers;
 
 
 import javax.validation.Valid;
 
-import l4.source.sd4.exceptions.BookNotFoundException;
-import l4.source.sd4.model.Book;
-import l4.source.sd4.service.BookService;
+import l6.source.sd4.exceptions.BookNotFoundException;
+import l6.source.sd4.model.Book;
+import l6.source.sd4.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -27,23 +27,9 @@ public class BookMVCController {
     @Autowired
     private BookService bookService;
 
-
-//    @ModelAttribute
-//    private void getList(Model model) {
-//        model.addAttribute("books", bookService.findAll());
-//    }
-
-    @RequestMapping("")
-    public ModelAndView getAllBooks() {
-
-        return new ModelAndView("/viewAll", "books", bookService.findAll());
-    }
-
-
     @GetMapping("/add")
     public ModelAndView displayAddForm() {
         Book b = new Book();
-        b.setTitle("This is my new title!!!");
         return new ModelAndView("/addBook", "aBook", b);
 
     }
@@ -54,14 +40,27 @@ public class BookMVCController {
             return new ModelAndView("/addBook");
 
         bookService.saveBook(b);
-        return new ModelAndView("redirect:/book");
+        return new ModelAndView("/viewAll", "books", bookService.findAll());
+//        return new ModelAndView("redirect:/book");
     }
-    
+
+    @RequestMapping("")
+    public ModelAndView getAllBooks() {
+
+        return new ModelAndView("/viewAll", "books", bookService.findAll());
+    }
+
+//    @ModelAttribute
+//    private void getList(Model model) {
+//        model.addAttribute("books", bookService.findAll());
+//    }
+
+
     @GetMapping("/title/{id}")
     @ResponseBody
     public String getTitleByID(@PathVariable("id") long id) {
         Optional<Book> o = bookService.findOne(id);
-        if (!o.isPresent()) {
+        if (o.isEmpty()) {
             throw new BookNotFoundException();
         } else {
             return o.get().getTitle();

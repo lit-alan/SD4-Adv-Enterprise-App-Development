@@ -1,4 +1,4 @@
-package l4.source.sd4.model;
+package l6.source.sd4.model;
 
 import java.util.Date;
 
