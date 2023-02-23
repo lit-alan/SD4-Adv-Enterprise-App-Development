@@ -40,8 +40,8 @@ public class BookMVCController {
             return new ModelAndView("/addBook");
 
         bookService.saveBook(b);
-        return new ModelAndView("/viewAll", "books", bookService.findAll());
-//        return new ModelAndView("redirect:/book");
+       return new ModelAndView("/viewAll", "books", bookService.findAll());
+       // return new ModelAndView("redirect:/book");
     }
 
     @RequestMapping("")

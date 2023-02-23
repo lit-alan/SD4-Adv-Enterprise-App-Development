@@ -66,7 +66,7 @@ public class MessageController {
 //    @GetMapping("/english")
 //    public ModelAndView handleEN(RedirectAttributes attributes) {
 //        attributes.addAttribute("message", "Hello World");
-//        attributes.addFlashAttribute("flashmessage", "soft day thanks god");
+//        attributes.addFlashAttribute("flashmessage", "soft day thank god");
 //        return new ModelAndView("redirect:/message/");
 //    }
 //

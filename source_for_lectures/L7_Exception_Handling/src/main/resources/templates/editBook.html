@@ -1,0 +1,40 @@
+<html>
+<head><title>Edit a book</title></head>
+
+<p>Edit a book</p>
+
+<form th:action="@{/book/editBook}" th:object="${aBook}" method="post">
+    <table>
+        <tr>
+            <td><label>Title</label></td>
+            <td><input type="text" th:field="*{title}" name="title"/></td>
+            <td style="color:red"><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" /></td>
+        </tr>
+
+        <tr>
+            <td><label>Publisher</label></td>
+            <td><input type="text" th:field="*{publisher}" name="publisher"/></td>
+            <td style="color:red"><span th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}" /></td>
+        </tr>
+        <tr>
+            <td><label>Publication Date</label></td>
+            <td><input type="date" th:field="*{publicationDate}" name="publicationDate"/></td>
+            <td style="color:red"><span th:if="${#fields.hasErrors('publicationDate')}" th:errors="*{publicationDate}" /></td>
+        </tr>
+        <tr>
+            <td><label>Price</label></td>
+            <td> <input type="text" th:field="*{price}" name="price"/></td>
+            <td style="color:red"><span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" /></td>
+        </tr>
+        <tr>
+            <td><label>ISBN</label></td>
+            <td><input type="text" th:field="*{isbn}" name="price"/></td>
+            <td style="color:red"><span th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}" /></td>
+       </tr>
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+            <td><input type="reset" value="Clear"></td>
+        </tr>
+    </table>
+</form>
+</html>
