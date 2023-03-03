@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class ExceptionController  {
 
 //     //@ExceptionHandler(value= {BookNotFoundException.class, IllegalStateException.class})
@@ -26,11 +26,13 @@ public class ExceptionController  {
 //    }
 
      //@ExceptionHandler(value= {BookNotFoundException.class, IllegalStateException.class})
-     @ExceptionHandler(value= BookNotFoundException.class)
-       public ResponseEntity<String> handleException(RuntimeException ex, WebRequest req) {
-        String bodyOfResponse = "A " + ex + " error has occured";
-        return new ResponseEntity(bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND);
-    }
+//     @ExceptionHandler(value= BookNotFoundException.class)
+//       public ResponseEntity<String> handleException(RuntimeException ex, WebRequest req) {
+//        String bodyOfResponse = "A " + ex + " error has occured";
+//         HttpHeaders headers = new HttpHeaders();
+//
+//        return new ResponseEntity(bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND);
+//    }
 }
 
 

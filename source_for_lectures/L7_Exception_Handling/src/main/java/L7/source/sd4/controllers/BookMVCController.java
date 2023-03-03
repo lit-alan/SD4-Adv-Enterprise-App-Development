@@ -40,7 +40,7 @@ public class BookMVCController {
     public String getTitleByID(@PathVariable("id") long id) {
         Optional<Book> o = bookService.findOne(id);
         if (o.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The requested title could not be found, please try again", new Exception());
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "The requested title could not be found, please try again", new Exception());
         } else {
             return o.get().getTitle();
         }
