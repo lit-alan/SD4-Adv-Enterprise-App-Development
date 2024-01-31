@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<html th:attr="locale=${en_IE}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title th:text="#{allBooks}"></title>
+</head>
+<body>
+<table>
+    <tr>
+        <th style="text-align:left" th:text="#{bookId}"> </th>
+        <th style="text-align:left" th:text="#{title}"></th>
+        <th style="text-align:left" th:text="#{publisher}"></th>
+        <th style="text-align:left" th:text="#{publication_date}"></th>
+        <th style="text-align:left" th:text="#{price}"></th>
+        <th style="text-align:left" th:text="#{ISBN}"></th>
+        <th style="text-align:left" th:text="#{actions}"></th>
+    </tr>
+    <tr th:each="b: ${books}">
+        <td th:text="${b.bookId}"></td>
+        <td th:text="${b.title}"></td>
+        <td th:text="${b.publisher}"></td>
+        <td th:text="${#calendars.format(b.publicationDate,'dd MMMM yyyy')}"></td>
+        <td th:text="${#numbers.formatCurrency(b.price)}"></td>
+        <td th:text="${b.isbn}"></td>
+        <td>
+            <a href="/book/add" class="button add-button" th:text="#{button.add}"></a>
+            <a th:href="@{'/book/edit/' + ${b.bookId}}" class="button edit-button" th:text="#{button.edit}"></a>
+            <a th:href="@{'/book/delete/' + ${b.bookId}}" class="button delete-button" th:onclick="'return confirm(\'' + #{js.confirmDelete} + '\')'" th:text="#{button.delete}"></a>
+        </td>
+    </tr>
+        </c:forEach>
+</table>
+</body>
+</html>
