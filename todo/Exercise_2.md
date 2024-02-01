@@ -132,7 +132,7 @@ _note the relationships between the two entity classes_
 
 **9. Update the three resource bundles with translations so that the new view will appear localised when the user switches languages/regions**
 
-**10. As an added extra try to display in a list any of the other books that the selected author has written. Each book title should be a link that will drill down on the author who wrote it**
+**10. As an added extra try to display in a list any of the other books that the selected author has written. Each book title should be a link that will drill down on the book**
 ![image](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/assets/4732629/2a3ced1e-87aa-4eef-a257-903d5d3b8484)
 
 _This is the page localised in Spanish for the country of Spain_
