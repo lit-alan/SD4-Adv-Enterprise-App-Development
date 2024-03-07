@@ -139,11 +139,11 @@ If the client neglects to send the token with subsequent requests they will reci
 
 ### 7. Running the Java Client.
 
-While the Spring boot application is runnin , you can run the provided Java Client. This code authenticate a user and accesses a the protected resource (`/hello`) using a JWT.
+While the Spring boot application is running , you can run the provided Java Client. This code authenticates a user and accesses the protected resource (`/hello`) using a JWT.
 
-The authenticate method sends a (POST) request to `/authenticate' with a JSON body containing user credentials (username and password). If the authentication is successful (HTTP 200 status code), it parses the response to extract the JWT token provided by the server.  
+The authenticate method sends a (POST) request to `/authenticate` with a JSON body containing user credentials (username and password). If the authentication is successful (HTTP 200 status code), it parses the response to extract the JWT token provided by the server.  
 
-With the obtained JWT token, the accessProtectedResource method sends a (GET) request to `/hello`. It includes the JWT token in the Authorization header as a Bearer token. If access is granted (HTTP 200 status code), it prints the response from the protected resource.  
+With the obtained JWT token, the accessProtectedResource method sends a (GET) request to `/hello`. It includes the JWT token in the Authorisation header as a Bearer token. If access is granted (HTTP 200 status code), it prints the response from the protected resource.  
 
 The output for the client looks as follows:  
 
