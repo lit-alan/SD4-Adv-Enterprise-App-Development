@@ -1,6 +1,6 @@
 ## Implementing AuthN with JWT in a Simple REST API :boom:
 
-If you want to jump straight into testing the code using Postman, then click [here](#6-sample-run). Don't forget to come back and read the rest of the document to gain a full understanding of how it all works.
+If you want to jump straight into testing the code using Postman, then click [here](#6-sample-run). Make sure that the Spring Boot project `REST_API_Using_JWT` is running first. Afterwards, don't forget to come back and read the rest of the document to gain a full understanding of how it all works.
 
 **JSON Web Token (JWT)** are widely used in authentication and authorisation, including in the context of web applications and APIs. 
 
