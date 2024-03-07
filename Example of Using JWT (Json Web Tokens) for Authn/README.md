@@ -123,7 +123,8 @@ If an invalid username and password combination are sent to the API it will resp
 
 To access the (restricted) content at `/hello` the token must be sent in the authorisation header of the request. Firstly, copy the token from the response that you recieved upon authentication, then select the _Authorization_ tab in Postman and set the type to _Bearer Token_. Paste the copied token into the space provided and submit the **GET** request to `/hello`. The API will then read the token from the header, validate it and then return the restricted content. For example:
 
-![image](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/assets/4732629/8348af95-874f-43d6-b20d-ca1666d23007)
+![image](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/assets/4732629/95683a89-fbe0-4cff-a346-6117ed60775d)
+
 
 The token will expire 10 hours after it has been generated in which case the client would be required to re-authenticate with the API.
 
