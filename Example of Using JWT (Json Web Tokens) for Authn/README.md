@@ -117,7 +117,7 @@ _Note that the username and password are submitted in JSON format._
 
 Upon receipt of a valid username and password combination, the REST API will create a Web Token which is returned to the client (see the body of the response above). The client will be required to send this token with every request it makes for a restricted resource (in this API there is only one restricted resource `/hello`).
 
-If an invalid username and password combination are sent to the API it will respond with a 403 Forbidden Status (and cruically, no token will be returned). For example:
+If an invalid username and password combination are sent to the API it will respond with a 403 Forbidden Status (and crucially, no token will be returned). For example:
 
 ![image](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/assets/4732629/470f4c34-9783-4c9e-9db9-791ad397993f)
 
