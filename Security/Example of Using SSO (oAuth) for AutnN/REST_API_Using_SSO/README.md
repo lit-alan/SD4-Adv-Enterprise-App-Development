@@ -17,7 +17,7 @@ As previously mentioed, this example is using GitHub as a SSO provider so you wi
 
 - Navigate to your account settings on GitHub, then to the "Developer settings" section.
 - Go to the "OAuth Apps" page and click on "New OAuth App".
-- Fill out the form with your application's details:
+- Fill out the form with your application's details:  
        ![image](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/assets/4732629/049470b0-3bd4-4901-879c-bc48b9dd8bd7)
  
 The authorization callback URL is the URL in your application where users will be sent after authorization. This must be a URL where your application is prepared to receive an OAuth code and exchange it for an access token. You can enter ```http://localhost:8080/login/oauth2/code/github```
@@ -35,7 +35,7 @@ In this example there are two controllers:
 
 ### Step 3: Define Security Config
 
-This [configuration](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/Security/Example%20of%20Using%20SSO%20(oAuth)%20for%20AutnN/REST_API_Using_SSO/src/main/java/com/example/rest_api_using_sso/security/SecurityConfig.java) disables CSRF protection (as it's often not required for token-based REST APIs), permits unauthenticated access to the root (```/```) and ```/goodbye``` endpoints, and requires authentication (using SSO with GitHub) for all other requests.
+This [configuration](https://github.com/lit-alan/SD4-Adv-Enterprise-App-Development/blob/master/Security/Example%20of%20Using%20SSO%20(oAuth)%20for%20AutnN/REST_API_Using_SSO/src/main/java/com/example/rest_api_using_sso/security/SecurityConfig.java) disables CSRF protection (as it's often not required for token-based REST APIs), permits unauthenticated access to the root (```/```) and ```/goodbye``` endpoints, but requires authentication (using SSO with GitHub) for all other requests.
 
 
 ### Step 4: Running and Testing the Application
